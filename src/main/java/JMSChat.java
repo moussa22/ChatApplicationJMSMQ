@@ -3,9 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -57,7 +55,27 @@ public class JMSChat extends Application {
         vBox.getChildren().add(gridPane);
         vBox.getChildren().add(hBox2);
         borderPane.setCenter(vBox);
-
+        Label labelTo=new Label("To");
+        TextField textFieldTo=new TextField("C1");
+        textFieldTo.setPrefWidth(150);
+        Label labelMessage=new Label("Message");
+        TextArea textAreMessage=new TextArea();
+        Button buttonSend=new Button("Send");
+        textAreMessage.setPrefWidth(150);
+        Label labelImage=new Label("Image");
+        ComboBox<String> comboBoxImage=new ComboBox<String>();
+        Button buttonSendImage=new Button("Send Image");
+        gridPane.setPadding(new Insets(10));
+        gridPane.setVgap(10);
+        gridPane.setHgap(10);
+        textAreMessage.setPrefRowCount(2);
+        gridPane.add(labelTo,0,0); gridPane.add(textFieldTo,1,0);
+        gridPane.add(labelMessage,0,1);
+        gridPane.add(textAreMessage,1,1);
+        gridPane.add(buttonSend,2,1);
+        gridPane.add(labelImage,0,2);
+        gridPane.add(comboBoxImage,1,2);
+        gridPane.add(buttonSendImage,1,2);
 
         Scene scene=new Scene(borderPane,800,500);
 
